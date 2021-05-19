@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Editorial</title>
+
+</head>
+<body>
+
+    <body>
+
+        <div style="font-size:22px">
+		<center>
+		<h1 > Editorial Information</h1>
+		<div style="display: table-caption">
+     
+        {{#publisher}}
+        <form action="/update_Publisher/{{id}}/{{id}}" method="POST">
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input class="form-control" value="{{name}}" name="name" id="name" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Country</label>
+                <input class="form-control" value="{{country}}" name="country" id="country" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Foundation</label>
+                <input class="form-control" value="{{founded}}" name="founded" id="founded" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Genre</label>
+                <input class="form-control" value="{{genere}}" name="genere" id="genere" type="text">
+              </div>
+   
+      
+        <button type="submit" value="Create" class="btn btn-outline-dark">Modify Editorial</button>
+    </form>
+        {{/publisher}}
+
+        </div>
+
+</body>
+</html>

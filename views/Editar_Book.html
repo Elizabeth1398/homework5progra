@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Book</title>
+
+<body>
+
+
+		<div style="font-size:22px">
+		<center>
+		<h1 > Book Information</h1>
+		<div style="display: table-caption">
+        {{#books}}
+        <form action="/update/{{id}}/{{id}}" method="POST">
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input class="form-control" value="{{title}}" name="title" id="title" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Edition</label>
+                <input class="form-control" value="{{edition}}" name="edition" id="edition" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Copyright</label>
+                <input class="form-control" value="{{copyright}}" name="copyright" id="copyright" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Pages</label>
+                <input class="form-control" value="{{pages}}" name="pages" id="pages" type="text">
+              </div>
+          
+      
+              <button type="submit" value="Create" class="btn btn-outline-dark">Modify Book</button>
+
+    </form>
+        {{/books}}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Authors</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+buttons{
+background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+
+ <div class="container">
+  <div class="row">
+   <div class="eleven column" style="margin-top: 10%">
+
+     <center>
+    {{#login}}
+    <a href="/logout" login >Logout</a>
+    {{/login}}
+    {{^login}}
+    <a href="/inicio" login >Login</a>
+    {{~login}}
+
+    <a href="/">Books</a>
+    <a href="/list_Publisher">Editorials</a>
+    <center>
+    <h1>Authors</h1>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Nacionality</th>
+        <th>Birth Year</th>
+        <th>Fields</th>
+        {{#login}}
+        <th>Modify</th>
+        <th>Delete</th>
+        {{/login}}
+
+      </tr>
+      </thead><tbody>
+      {{#author}}
+      <tr>
+      <td>{{name}}</a></td>
+      <td>{{nationality}}</td>
+      <td>{{birth}}</td>
+      <td>{{fields}}</td>
+      {{#login}}
+      <td><a href="edit_Author/{{id}}">Modify</a></td>
+      <td><a  href="Eliminar_Author/{{id}}">Delete</a></td>
+      {{/login}}
+      </tr>
+      {{/author}}</tbody>
+     </table>
+
+    </center>
+    {{#login}}
+     <a href="Agregar_Author">Add Author</a>
+     {{/login}}
+
+    </div>
+   </div>
+ </div>
+</body>

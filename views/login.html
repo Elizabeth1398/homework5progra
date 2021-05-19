@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<!-- file: views/auth/login.html -->  
+<html>  
+<head>
+{{> header}}  
+
+</head>
+<body>
+  <div style="font-size:22px">
+	<center>
+	<h1 > Login</h1>
+	<div style="display: table-caption">
+     <form action="/login" method="POST">
+  
+       <div class="mb-3">
+        <label for="email">Email</label>
+        <input class="form-control" type="text" name="email">
+      </div>
+      <div class="mb-3">
+     	<br>
+        <label for="password">Password</label>
+        <input class="form-control" type="password" name="password">
+      </div>
+	<br>
+
+      <div class="mb-3">  
+        <button type="submit" value="Login" class="btn btn-outline-dark">Login</button>
+     
+    <div>
+    </form>
+  </div>
+</body>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify autor</title>
+
+</head>
+<body>
+
+    <body>
+
+        <div style="font-size:22px">
+		<center>
+		<h1 > Author Information</h1>
+	<div style="display: table-caption">
+        {{#author}}
+        <form action="/update_Author/{{id}}/{{id}}" method="POST">
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">ID</label>
+                <input readonly class="form-control" value="{{id}}" name="id" id="id" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input class="form-control" value="{{name}}" name="name" id="name" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nacionality</label>
+                <input class="form-control" value="{{nationality}}" name="nationality" id="nationality" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Birth Year</label>
+                <input class="form-control" value="{{birth}}" name="birth" id="birth" type="text">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Fields</label>
+                <input class="form-control" value="{{fields}}" name="fields" id="fields" type="text">
+              </div>
+
+    
+      
+              <button type="submit" value="Create" class="btn btn-outline-dark">Modify Author</button>
+    </form>
+        {{/author}}
+
+        </div>
+		</div>
+</body>
+</html>

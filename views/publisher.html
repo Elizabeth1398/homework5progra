@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- file: views/professor/index.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Editorials</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+buttons{
+background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+
+ <div class="container">
+  <div class="row">
+   <div class="eleven column" style="margin-top: 10%">
+
+    <center>
+    {{#login}}
+    <a href="/logout" login >Logout</a>
+    {{/login}}
+    {{^login}}
+    <a href="/inicio" login >Login</a>
+    {{~login}}
+
+
+    <a  href="/list_Author">Authors</a>
+    <a  href="/">Books</a>
+    <center>
+    <h1>Editorials</h1>
+   
+    <table class="table">
+      <thead class="thead-dark">
+      
+      <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Foundation</th>
+      <th>Genre</th>
+      {{#login}}
+      <th>Modify</th>
+      <th>Delete</th>
+      {{/login}}
+      
+    </tr>
+    
+  </thead><tbody>
+    {{#publisher}}
+    <tr>
+      <td>{{name}}</a></td>
+      <td>{{country}}</td>
+      <td>{{founded}}</td>
+      <td>{{genere}}</td>
+      {{#login}}
+      <td><a href="edit_Publisher/{{id}}">Modify</a></td>
+      <td><a href="Eliminar_Publisher/{{id}}">Delete</a></td>
+      {{/login}}
+    </tr>
+    {{/publisher}}</tbody>
+  </table>
+</center>
+{{#login}}
+<a href="Agregar_Publisher">Add Editorials</a>
+{{/login}}
+    </div>
+   </div>
+ </div>
+</body>

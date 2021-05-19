@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- file: views/professor/index.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Books</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+buttons{
+background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+
+
+
+
+    <div class="row">
+     <div class="eleven column" style="margin-top: 10%">
+
+ 	<center>
+
+      {{#login}}
+      <a href="/logout" login >Logout</a>
+      {{/login}}
+      {{^login}}
+      <a href="/inicio" login >Login</a>
+      {{~login}}
+	
+
+    <a role="button" class="btn btn-secondary"  href="/list_Author">Author</a>
+    <a role="button" class="btn btn-secondary"  href="/list_Publisher">Editorials</a>
+
+
+   
+    <h1>Books</h1>
+    <table class="table">
+      <thead class="thead-dark">
+      
+      <tr>
+        <th>Title</th>
+		  <th>Edition</th>
+		  <th>Copyright</th>
+        <th>Pages</th>
+        {{#login}}
+        <th>Modify</th>
+        <th>Delete</th>
+        {{/login}}
+      </tr>
+
+      </thead><tbody>
+      {{#books}}
+      <tr>
+      <td>{{title}}</a></td>
+      <td>{{edition}}</td>
+      <td>{{copyright}}</td>
+      <td>{{pages}}</td>
+      {{#login}}
+     <td><a role="button" class="btn btn-success"  href="edit_Book/{{id}}">Modify</a></td>
+      <td><a  role="button" class="btn btn-success"  href="Eliminar_Book/{{id}}">Delete</a></td>
+      {{/login}}
+      </tr>
+      {{/books}}</tbody>
+     </table>
+   
+
+    {{#login}}
+    <a role="button" class="btn btn-success" href="Agregar_Book">Add Book</a>
+    {{/login}}
+
+    </center>
+    </div>
+   </div>
+ </div>
+</body>
